@@ -1,4 +1,7 @@
-# Difficulty
+# YINR Wallet
+
+
+## Difficulty
 
 Based on the difficulty when miners try to add a new block, they will have to find
 hash value for this block that matches the difficulty, for this matching
@@ -23,3 +26,14 @@ nonce starts at zero , one, increments upto it has a matching number of leading 
 according to the set difficulty, by this act of changing nounce values 
 with the block data for generating hashes to match with the difficulty
 level it takes decent amount of time, called proof of work.
+
+
+## Mining
+
+Mining is find to the correct hash of the block, when miner has successfully 
+mined the block and has the values additionall difficulty and nonce values
+when miner succesfully mined the block they then have the rights to
+submit the block and shares the nounce values to other miners, then
+other miners knows the nounce values then quickly verify the valid block
+ and added block to thier chain.with out doing the same computational
+work again.
