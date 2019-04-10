@@ -48,4 +48,5 @@ Based on the minerate the difficulty in the system will be adjusted.
 We compare the timestamp of present block and lastBlock called time diff
 
 time diff < mine rate, then increase the difficulty level
+
 time diff > mine rate, then decrease the difficulty level
