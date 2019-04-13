@@ -28,19 +28,25 @@ class Blockchain {
     // check lastHash Reference with in current block is valid or not
     for(let i=1; i<chain.length; i++) {
       // Get the block
-      const { timestamp, lastHash, hash, data } = chain[i];
+      const { timestamp, lastHash, hash, nonce, difficulty, data } = chain[i];
 
       // take previous block hash
       const actualLastHash = chain[i-1].hash;
+
+      // Last block difficulty and miners current block difficulty greater than 1 returns false
+      const lastDifficulty = chain[i-1].difficulty;
 
       // test lastHash
       if(lastHash !== actualLastHash) return false;
 
       // Test any fields has changed by creating a hash again for the data
-      const validatedHash = cryptoHash(timestamp, lastHash, data);
+      const validatedHash = cryptoHash(timestamp, lastHash, data, nonce, difficulty);
 
       // Test both hashes.
       if(hash !== validatedHash) return false;
+
+      if(Math.abs(lastDifficulty - difficulty) > 1) return false;
+
     }
 
     // It is a valid chain.
