@@ -12,7 +12,7 @@ const verifySignature = ({ publicKey, data, signature }) => {
   // import a public key
   const keyFromPublic = ec.keyFromPublic(publicKey, 'hex');
 
-  // with the publickey verify the data and signature.
+  // with the publickey verify the data(outputmap) and signature.
   return keyFromPublic.verify(cryptoHash(data), signature);
 
 };

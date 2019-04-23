@@ -17,6 +17,7 @@ class Block {
     return new this(GENESIS_DATA);
   }
 
+  // generate a valid hash for the block
   static mineBlock({ lastBlock, data }) {
     const lastHash = lastBlock.hash;
     let hash, timestamp;
